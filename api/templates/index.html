@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>PESQUISAR PLACAS</title>
+</head>
+<body>
+    <form action="{{url_for('consulta_placas')}}" name="search" method="POST">
+        <div class="app">
+            <h3>BUSCA DE PLACAS</h3>
+            
+                <input type="text" placeholder="Digite a placa aqui " class="textfield" name="buscar_placas">
+                <input type="submit" name="submit" class="btn-login">
+
+        </div>
+        
+    </form>
+    <div class="details">
+            <p><strong>PLACA</strong>  : {{result['data']['placa']}}</p>
+            <p><strong>CONJUNTO</strong> : {{result['data']['conjunto']}}</p>
+            <p><strong>MOTORISTA</strong> : {{result['data']['motorista']}}</p>
+            <p><strong>MARCA</strong> : {{result['data']['marca_caminhao']}}</p>
+            <p><strong>MODELO</strong> : {{result['data']['modelo_caminhao']}}</p>
+            <p><strong>SITUAÇÃO</strong> : {{result['data']['situacao']}}</p>
+
+
+
+    </div>
+           
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</html>
