@@ -1,6 +1,11 @@
 body {
     margin: 0;
     font-family: 'Nunito', sans-serif;
+    background: #c5b3f5;
+    color: white;
+}
+.main{
+    width: 100%;
     background: #2f2841;
     color: white;
 }
