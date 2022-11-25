@@ -9,7 +9,9 @@ app.config['SECRET_KEY']='UZUMYMW'
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    dados = requests.get("http://186.208.132.129:8080/acap/API/parceiros/placa/")
+    json_data = json.loads(dados.content)
+    return render_template("index.html",result=json_data)
 
 @app.route("/placa/search", methods=['GET','POST'])
 def consulta_placas():
